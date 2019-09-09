@@ -1,4 +1,4 @@
-module dogego-cli
+module github.com/xiangrui2019/dogego-cli
 
 go 1.13
 
