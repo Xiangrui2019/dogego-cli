@@ -1,7 +1,7 @@
 package main
 
 import (
-	"dogego-cli/cmd"
+	"github.com/xiangrui2019/dogego-cli/cmd"
 	"log"
 )
 
