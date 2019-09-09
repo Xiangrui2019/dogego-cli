@@ -81,6 +81,8 @@ func createProject(cmd *cobra.Command, args []string) {
 	wd, _ := os.Getwd()
 
 	cmdx.Stdout = os.Stdout
+	cmdx.Stderr = os.Stdout
+	cmdx.Stdin = os.Stdin
 	cmdx.Dir = wd
 	err := cmdx.Run()
 
