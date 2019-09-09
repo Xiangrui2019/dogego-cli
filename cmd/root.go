@@ -6,14 +6,11 @@ import (
 
 var RootCmd = &cobra.Command{
 	Use:   "dogego",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "DogeGo脚手架.",
+	Long:  `DogeGo的项目工具脚手架.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
-	//	Run: func(cmd *cobra.Command, args []string) { },
+	Run: func(cmd *cobra.Command, args []string) {
+		cmd.Help()
+	},
 }
