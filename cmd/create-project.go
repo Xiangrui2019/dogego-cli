@@ -42,8 +42,8 @@ func replaceProjectName() {
 		} else {
 			rb = strings.Replace(string(buffer), "dogego", project_name, -1)
 		}
-
-		fp, _ = os.OpenFile(path, os.O_WRONLY, 666)
+		log.Println(rb)
+		fp, _ = os.OpenFile(path, os.O_WRONLY|os.O_TRUNC, 666)
 		fp.WriteString(rb)
 		fp.Close()
 		log.Printf("处理: %s", path)
@@ -69,13 +69,13 @@ func createProject(cmd *cobra.Command, args []string) {
 		cmdx = exec.Command(
 			"git",
 			"clone",
-			"https://github.com/Xiangrui2019/dogego",
+			"https://github.com/Xiangrui2019/dogego-mini",
 			project_name)
 	} else {
 		cmdx = exec.Command(
 			"git",
 			"clone",
-			"https://github.com/Xiangrui2019/dogego-mini",
+			"https://github.com/Xiangrui2019/dogego",
 			project_name)
 	}
 	wd, _ := os.Getwd()
