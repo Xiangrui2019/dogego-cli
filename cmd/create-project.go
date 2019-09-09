@@ -14,8 +14,8 @@ var project_name string
 var tmpl_type string
 
 var CreateProject = &cobra.Command{
-	Use:   "create-project",
-	Short: "创建DogeGo项目.",
+	Use:   "create",
+	Short: "创建新的DogeGo项目.",
 	Run:   createProject,
 }
 
@@ -42,7 +42,7 @@ func replaceProjectName() {
 		} else {
 			rb = strings.Replace(string(buffer), "dogego", project_name, -1)
 		}
-		log.Println(rb)
+
 		fp, _ = os.OpenFile(path, os.O_WRONLY|os.O_TRUNC, 666)
 		fp.WriteString(rb)
 		fp.Close()
