@@ -14,3 +14,7 @@ var RootCmd = &cobra.Command{
 		cmd.Help()
 	},
 }
+
+func init() {
+	RootCmd.AddCommand(CreateProject)
+}
