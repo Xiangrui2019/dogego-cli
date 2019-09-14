@@ -64,6 +64,7 @@ func replacer(s string) string {
 	case "mini":
 		result = strings.Replace(s, "dogego-mini", project_name, -1)
 	case "jrpc":
+		result = strings.Replace(s, "jrpc", project_name, -1)
 	default:
 		result = strings.Replace(s, "dogego", project_name, -1)
 	}
