@@ -41,6 +41,12 @@ func ProjectTypeGit(workdir string) *exec.Cmd {
 			"clone",
 			"https://github.com/Xiangrui2019/jrpc",
 			project_name)
+	case "jrpc-orm":
+		gitCommand = exec.Command(
+			"git",
+			"clone",
+			"https://github.com/Xiangrui2019/jrpc-orm",
+			project_name)
 	default:
 		gitCommand = exec.Command(
 			"git",
@@ -65,6 +71,8 @@ func replacer(s string) string {
 		result = strings.Replace(s, "dogego-mini", project_name, -1)
 	case "jrpc":
 		result = strings.Replace(s, "jrpc", project_name, -1)
+	case "jrpc-orm":
+		result = strings.Replace(s, "jrpc-orm", project_name, -1)
 	default:
 		result = strings.Replace(s, "dogego", project_name, -1)
 	}
@@ -127,5 +135,5 @@ func createProject(cmd *cobra.Command, args []string) {
 func init() {
 	CreateProject.Flags().StringVarP(&project_name, "name", "n", "", "项目名称")
 	CreateProject.MarkFlagRequired("name")
-	CreateProject.Flags().StringVarP(&tmpl_type, "type", "t", "", "项目类型(full or mini or jrpc or jrpc+orm)")
+	CreateProject.Flags().StringVarP(&tmpl_type, "type", "t", "", "项目类型(full or mini or jrpc or jrpc-orm)")
 }
